@@ -7,13 +7,23 @@
 		<link rel = 'stylesheet' type = 'css/text' href = 'main.css'>
 		<link href='https://fonts.googleapis.com/css?family=Emblema+One' rel='stylesheet' type='text/css'>
 		<title>Victims and Volunteers</title>
+
 	</head>
+
+
+
 	<body ng-controller = 'main-controller'>
 		<div class = 'main-container'>
 			<div class= 'header'>
 				<h1>Join The</h1>
 				<h1>{{greeting}}</h1>
 			</div>
+			<div class = 'lightbulb'>
+				<img src = 'images/lightbulb-sprite.png'/>
+			</div>
+			
+
+
 			<div class = 'victims-panel'>
 				<div class = 'panel-header'><h3>Victims!</h3></div>
 
@@ -31,7 +41,7 @@
 				<div class = 'person' ng-repeat = "people in volunteers">
 					<p>{{people.name}}</p>
 					<p>{{people.number}}</p>
-					<p>{{people.address}}</p>
+					<p ng-class='{green:people.match}'>{{people.address}}</p>
 				</div>
 			</div>
 			<div class = 'victim-container'>
@@ -43,48 +53,17 @@
 				</div>
 				<input ng-click='addVictim()'class = 'enter' type='submit'>
 			</div>
-			<div class = 'volunteer-container'>
-				<h2>Enter Volunteers Below</h2>
-				<div class = 'volunteer-form'>
-					<input placeholder = "name" type='text' ng-model='newVol.name'></input><br>
-					<input placeholder = "number" type='text' ng-model='newVol.number'></input><br>
-					<input placeholder = "address" type='text' ng-model='newVol.address'></input><br>
+				<div class = 'volunteer-container'>
+					<h2>Enter Volunteers Below</h2>
+					<div class = 'volunteer-form'>
+						<input placeholder = "name" type='text' ng-model='newVol.name'></input><br>
+						<input placeholder = "number" type='text' ng-model='newVol.number'></input><br>
+						<input placeholder = "address" type='text' ng-model='newVol.address'></input><br>
+					</div>
+					<input type='submit' ng-click = 'addVol()'>	
 				</div>
-				<input type='submit' ng-click = 'addVol()'>	
 			</div>
 		</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	</body>
