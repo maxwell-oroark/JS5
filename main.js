@@ -20,7 +20,7 @@ myApp.controller('main-controller',['$scope','$timeout', function($scope, $timeo
 		$scope.volunteers.push($scope.newVol);
 		$scope.newVol = {}
 		console.log($scope.volunteers)
-		
+
 	}
 
 	$scope.checkMatch = function(){
@@ -31,10 +31,11 @@ myApp.controller('main-controller',['$scope','$timeout', function($scope, $timeo
 
 	}
 	}
+	$scope.lightOn = function(){
+		$scope.light = true;
+	}
 
-
-
-// scope.volunteers[0].address
+	$timeout([lightOn],[1000])
 
 
 }])
