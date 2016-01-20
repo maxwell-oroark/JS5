@@ -1,12 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html ng-app = 'myApp'>
 	<head>
-		<script src = 'main.js'></script>
+		
+		<script type = 'text/javascript' src = 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js'></script>
+		<script type = 'text/javascript' src = 'main.js'></script>
+		<link rel = 'stylesheet' type = 'css/text' href = 'main.css'>
+		<link href='https://fonts.googleapis.com/css?family=Emblema+One' rel='stylesheet' type='text/css'>
+		<title>Victims and Volunteers</title>
 	</head>
-	<body>
+	<body ng-controller = 'main-controller'>
+		<div class = 'main-container'>
+			<div class= 'header'>
+				<h1>Join The</h1>
+				<h1>{{greeting}}</h1>
+			</div>
+			<div class = 'victims-panel'>
+				<div class = 'panel-header'><h3>Victims!</h3></div>
+
+				<div class = 'person' ng-repeat = "people in victims">
+					<p>{{people.name}}</p>
+					<p>{{people.phonenumber}}</p>
+					<p>{{people.address}}</p>
+				</div>
 
 
+			</div>
+			<div class = 'volunteers-panel'>
+				<div class = 'panel-header'><h3>Volunteers!</h3></div>
 
+				<div class = 'person' ng-repeat = "people in volunteers">
+					<p>{{people.name}}</p>
+					<p>{{people.number}}</p>
+					<p>{{people.address}}</p>
+				</div>
+			</div>
+			<div class = 'victim-container'>
+				<h2>Enter Victims Below</h2>
+				<div class = 'victim-form'>
+					<input ng-model='newVictim.name'type='text' placeholder='name'></input><br>
+					<input ng-model='newVictim.phonenumber' type='text' placeholder="phone"></input><br>
+					<input ng-model='newVictim.address' type='text' placeholder="address"></input><br>
+				</div>
+				<input ng-click='addVictim()'class = 'enter' type='submit'>
+			</div>
+			<div class = 'volunteer-container'>
+				<h2>Enter Volunteers Below</h2>
+				<div class = 'volunteer-form'>
+					<input placeholder = "name" type='text' ng-model='newVol.name'></input><br>
+					<input placeholder = "number" type='text' ng-model='newVol.number'></input><br>
+					<input placeholder = "address" type='text' ng-model='newVol.address'></input><br>
+				</div>
+				<input type='submit' ng-click = 'addVol()'>	
+			</div>
+		</div>
 
 
 
