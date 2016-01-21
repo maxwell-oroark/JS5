@@ -1,8 +1,9 @@
 var myApp = angular.module('myApp',[]);
 
 myApp.controller('main-controller',['$scope','$timeout', function($scope, $timeout){
+	$scope.light = false;
 	$scope.match = false;
-	$scope.greeting = 'RELIEF EFFORT'
+
 	$scope.victims = []
 	$scope.volunteers = []
 
@@ -12,6 +13,7 @@ myApp.controller('main-controller',['$scope','$timeout', function($scope, $timeo
 		$scope.newVictim = {};
 		console.log($scope.victims)
 		$scope.checkMatch();
+		$scope.lightOn();
 
 	}
 
@@ -20,6 +22,7 @@ myApp.controller('main-controller',['$scope','$timeout', function($scope, $timeo
 		$scope.volunteers.push($scope.newVol);
 		$scope.newVol = {}
 		console.log($scope.volunteers)
+		$scope.lightOn();
 
 	}
 
@@ -31,11 +34,23 @@ myApp.controller('main-controller',['$scope','$timeout', function($scope, $timeo
 
 	}
 	}
+
 	$scope.lightOn = function(){
 		$scope.light = true;
+		$timeout(function(){
+			$scope.light=false;
+		},2000)
 	}
 
-	$timeout([lightOn],[1000])
+
+
+	
+
+	// $scope.lightOn = function(){
+	// 	$scope.light = true;
+	// }
+
+	// $timeout([lightOn],[1000])
 
 
 }])

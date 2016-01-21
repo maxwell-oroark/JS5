@@ -27,6 +27,10 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+.spotlight {
+	color: #f1c40f
+}
+
 .header:before {
       content: '';
       z-index: -1;
@@ -75,6 +79,11 @@ h1, h2, h3, h4, h5, h6 {
 	border-radius: 5px;
 }
 
+.light-on img {
+	background-image: url('images/lightbulb-sprite.png');
+	background-position: -50px 0;
+}
+
 .victim-container {
 	margin: 75px auto;
 	padding: 15px;
@@ -109,8 +118,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .lightbulb img:hover {
-	background-image: url('images/lightbulb-sprite.png');
-	background-position: -50px 0;
+	
 }
 
 div > .person {
